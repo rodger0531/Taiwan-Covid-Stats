@@ -1,16 +1,14 @@
 import { useEffect } from "react";
-import { REQUEST_CONFIRMED_CASES_LIST } from "../redux/actionTypes";
 import { useDispatch, useSelector } from "react-redux";
 import { getConfirmedCasesListState } from "../redux/selectors";
+import { requestConfirmedCasesList } from "../redux/actions";
 
 const ConfirmedCases = (props) => {
   const dispatch = useDispatch();
   const { isLoading, confirmedCases } = useSelector(getConfirmedCasesListState);
 
   useEffect(() => {
-    dispatch({
-      type: REQUEST_CONFIRMED_CASES_LIST,
-    });
+    dispatch(requestConfirmedCasesList());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

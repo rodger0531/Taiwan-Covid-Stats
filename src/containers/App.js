@@ -3,10 +3,8 @@ import ConfirmedCases from "./confirmedCases";
 
 function App(props) {
   return (
-    <div className="App">
-      <header className="text-white bg-gray-800">
-        <ConfirmedCases />
-      </header>
+    <div className="App p-10">
+      <ConfirmedCases />
     </div>
   );
 }

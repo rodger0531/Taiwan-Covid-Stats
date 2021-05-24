@@ -12,6 +12,11 @@ const ConfirmedCases = (props) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const cumulativeSum = (
+    (sum) => (value) =>
+      (sum += value)
+  )(0);
+
   return (
     <div className="text-sm">
       {isLoading && <p>Loading</p>}
@@ -19,14 +24,17 @@ const ConfirmedCases = (props) => {
         <>
           {Object.entries(
             confirmedCases.reduce((t, x) => {
-              t[x.個案研判日] = (t[x.個案研判日] || 0) + +x.確定病例數;
+              t[x.個案研判日] = {
+                count: (t[x.個案研判日]?.count || 0) + +x.確定病例數,
+                cumSum: cumulativeSum(+x.確定病例數),
+              };
               return t;
             }, {})
           )
             .reverse()
-            .map(([key, value]) => (
+            .map(([key, { count, cumSum }]) => (
               <p key={key}>
-                {key}: {value}
+                {key}: {count}, sum: {cumSum}
               </p>
             ))}
         </>

@@ -45,7 +45,7 @@ const ConfirmedCases = (props) => {
           <BarChart data={cumulateData} title="Covid-19 確診數" className="" />
         </div>
       )}
-      {confirmedCases && (
+      {/* {confirmedCases && (
         <>
           {cumulateData.reverse().map(([key, { count, cumSum }]) => (
             <p key={key}>
@@ -53,7 +53,7 @@ const ConfirmedCases = (props) => {
             </p>
           ))}
         </>
-      )}
+      )} */}
     </div>
   );
 };

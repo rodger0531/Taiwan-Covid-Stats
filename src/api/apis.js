@@ -16,6 +16,11 @@ const apis = {
     //       "https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json"
     //     ))(),
     // }).then(({ data }) => JSON.parse(data.contents)),
+    getGeneralStats: () =>
+      api({
+        method: "GET",
+        url: "https://data.cdc.gov.tw/api/3/action/datastore_search?resource_id=52eb9a7d-813d-48b1-b462-384a7c84a746",
+      }),
   },
 };
 

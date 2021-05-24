@@ -3,7 +3,6 @@ import ConfirmedCases from "./confirmedCases";
 import { Container, Typography, Link } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import GeneralStats from "./generalStats";
-import ChartTabs from "./chartTabs";
 
 const theme = createMuiTheme({
   palette: {
@@ -41,7 +40,6 @@ function App(props) {
             </Link>
           </Typography>
         </Container>
-        <ChartTabs />
         <GeneralStats />
         <ConfirmedCases />
       </div>

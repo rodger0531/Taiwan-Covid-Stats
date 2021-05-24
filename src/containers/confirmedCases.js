@@ -2,9 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getConfirmedCasesListState } from "../redux/selectors";
 import { requestConfirmedCasesList } from "../redux/actions";
-import LineChart from "../components/lineChart";
-import BarChart from "../components/barChart";
-import ChartCard from "../components/chartCard";
+import ChartTabs from "./chartTabs";
 
 const ConfirmedCases = () => {
   const dispatch = useDispatch();
@@ -34,28 +32,8 @@ const ConfirmedCases = () => {
     );
 
   return (
-    <div className="text-sm flex flex-col items-center m-5">
-      {confirmedStatsIsLoading && <p>Graph Loading</p>}
-      {!confirmedStatsIsLoading && (
-        <div className="w-3/5 flex flex-col">
-          <ChartCard title="COVID-19 累積確診數">
-            <LineChart data={cumulateData} className="mb-4" />
-          </ChartCard>
-          <hr className="my-8" />
-          <ChartCard title="最近7日確診數">
-            <BarChart data={cumulateData} />
-          </ChartCard>
-        </div>
-      )}
-      {/* {confirmedCases && (
-        <>
-          {cumulateData.reverse().map(([key, { count, cumSum }]) => (
-            <p key={key}>
-              {key}: {count}, sum: {cumSum}
-            </p>
-          ))}
-        </>
-      )} */}
+    <div className="m-5">
+      <ChartTabs data={cumulateData} isLoading={confirmedStatsIsLoading} />
     </div>
   );
 };

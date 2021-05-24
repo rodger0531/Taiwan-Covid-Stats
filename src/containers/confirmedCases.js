@@ -1,13 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  getConfirmedCasesListState,
-  getGeneralStatsState,
-} from "../redux/selectors";
-import {
-  requestConfirmedCasesList,
-  requestGeneralStats,
-} from "../redux/actions";
+import { getConfirmedCasesListState } from "../redux/selectors";
+import { requestConfirmedCasesList } from "../redux/actions";
 import LineChart from "../components/lineChart";
 import BarChart from "../components/barChart";
 
@@ -15,16 +9,9 @@ const ConfirmedCases = () => {
   const dispatch = useDispatch();
   const { isLoading: confirmedStatsIsLoading = true, confirmedCases } =
     useSelector(getConfirmedCasesListState);
-  const { isLoading: generalStatsIsLoading = true, generalStats } =
-    useSelector(getGeneralStatsState);
 
-  console.log(
-    "🚀 ~ file: confirmedCases.js ~ line 19 ~ ConfirmedCases ~ generalStats",
-    generalStats
-  );
   useEffect(() => {
     dispatch(requestConfirmedCasesList());
-    dispatch(requestGeneralStats());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -46,12 +33,7 @@ const ConfirmedCases = () => {
     );
 
   return (
-    <div className="text-sm flex flex-col items-center">
-      {generalStatsIsLoading && <p>Graph Loading</p>}
-      {/* {
-        generalStats
-      } */}
-
+    <div className="text-sm flex flex-col items-center m-5">
       {confirmedStatsIsLoading && <p>Graph Loading</p>}
       {!confirmedStatsIsLoading && (
         <div className="w-3/5 flex flex-col">

@@ -10,7 +10,7 @@ const StatsCard = ({ name, value, size = "base" }) => {
       content: "h2",
     },
     large: {
-      cardClass: "min-w-96 min-h-60 mx-5 my-5 text-center",
+      cardClass: "min-w-96 min-h-60 mx-5 my-5",
       title: "text-xl",
       content: "h1",
     },
@@ -27,7 +27,11 @@ const StatsCard = ({ name, value, size = "base" }) => {
           >
             {name}
           </Typography>
-          <Typography variant={cardSize[size].content} component="h2">
+          <Typography
+            variant={cardSize[size].content}
+            component="h2"
+            className="flex justify-center"
+          >
             {value}
           </Typography>
         </CardContent>

@@ -29,7 +29,8 @@ const LineChart = ({ data, title, className = "" }) => {
     axisY: {
       includeZero: true,
     },
-    // culture: "zh",
+    zoomEnabled: true,
+    zoomType: "xy",
     data: [
       {
         type: "line", //change type to bar, line, area, pie, etc

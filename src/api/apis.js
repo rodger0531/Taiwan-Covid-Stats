@@ -20,7 +20,7 @@ const apis = {
       api({
         method: "GET",
         url: "https://data.cdc.gov.tw/api/3/action/datastore_search?resource_id=52eb9a7d-813d-48b1-b462-384a7c84a746",
-      }),
+      }).then(({ data }) => data.result.records[0]),
   },
 };
 

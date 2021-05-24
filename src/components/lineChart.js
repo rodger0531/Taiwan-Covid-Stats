@@ -20,12 +20,9 @@ import CanvasJSReact from "../assets/canvasjs.react";
 // });
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const LineChart = ({ data, title, className = "" }) => {
+const LineChart = ({ data, className = "" }) => {
   const options = {
     animationEnabled: true,
-    title: {
-      text: title,
-    },
     axisY: {
       includeZero: true,
     },

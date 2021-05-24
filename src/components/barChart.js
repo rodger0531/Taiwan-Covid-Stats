@@ -17,14 +17,11 @@ CanvasJS.addColorSet(
 );
 var CanvasJSChart = CanvasJSReact.CanvasJSChart;
 
-const BarChart = ({ data, title, className }) => {
+const BarChart = ({ data, className = "" }) => {
   data = data.slice(data.length - 7, data.length);
 
   const options = {
     animationEnabled: true,
-    title: {
-      text: title,
-    },
     axisY: {
       includeZero: true,
     },

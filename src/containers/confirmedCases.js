@@ -4,6 +4,7 @@ import { getConfirmedCasesListState } from "../redux/selectors";
 import { requestConfirmedCasesList } from "../redux/actions";
 import LineChart from "../components/lineChart";
 import BarChart from "../components/barChart";
+import ChartCard from "../components/chartCard";
 
 const ConfirmedCases = () => {
   const dispatch = useDispatch();
@@ -37,13 +38,13 @@ const ConfirmedCases = () => {
       {confirmedStatsIsLoading && <p>Graph Loading</p>}
       {!confirmedStatsIsLoading && (
         <div className="w-3/5 flex flex-col">
-          <LineChart
-            data={cumulateData}
-            title="Covid-19 確診數"
-            className="mb-4"
-          />
+          <ChartCard title="COVID-19 累積確診數">
+            <LineChart data={cumulateData} className="mb-4" />
+          </ChartCard>
           <hr className="my-8" />
-          <BarChart data={cumulateData} title="最近7日確診數" className="" />
+          <ChartCard title="最近7日確診數">
+            <BarChart data={cumulateData} />
+          </ChartCard>
         </div>
       )}
       {/* {confirmedCases && (

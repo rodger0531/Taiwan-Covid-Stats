@@ -18,10 +18,6 @@ const GeneralStats = () => {
     ...restGeneratStats
   } = generalStats || {};
 
-  console.log(
-    "🚀 ~ file: generalStats.js ~ line 11 ~ GeneralStats ~ generalStats",
-    generalStats
-  );
   useEffect(() => {
     dispatch(requestGeneralStats());
     // eslint-disable-next-line react-hooks/exhaustive-deps

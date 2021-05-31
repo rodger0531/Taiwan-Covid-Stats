@@ -43,7 +43,9 @@ const BarChart = ({ data, className = "" }) => {
         indexLabelFontColor: "#5A5757",
         indexLabelPlacement: "outside",
         dataPoints: data.map(([key, value]) => ({
-          x: new Date(key),
+          x: new Date(
+            key.slice(0, 4) + "/" + key.slice(4, 6) + "/" + key.slice(6)
+          ),
           y: value.count,
         })),
       },

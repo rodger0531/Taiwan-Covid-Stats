@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, CardContent, CardActionArea, Paper } from "@material-ui/core";
+import { Card, CardActionArea, Paper } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import { blue } from "@material-ui/core/colors";
 import Typography from "@material-ui/core/Typography";

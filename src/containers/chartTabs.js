@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Paper, Tab, Tabs, Typography, Box, AppBar } from "@material-ui/core";
+import { Paper, Tab, Tabs, Box, AppBar } from "@material-ui/core";
 import LineChart from "../components/lineChart";
 import BarChart from "../components/barChart";
 import ChartCard from "../components/chartCard";

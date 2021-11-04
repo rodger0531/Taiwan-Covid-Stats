@@ -11,12 +11,8 @@ const GeneralStats = () => {
   const { isLoading: generalStatsIsLoading = true, generalStats } =
     useSelector(getGeneralStatsState);
 
-  const {
-    確診: 總確診,
-    昨日確診,
-    死亡,
-    ...restGeneratStats
-  } = generalStats || {};
+  const { 確診, 昨日確診, 死亡, ...restGeneratStats } = generalStats || {};
+  console.log(generalStats);
 
   useEffect(() => {
     dispatch(requestGeneralStats());
@@ -28,11 +24,11 @@ const GeneralStats = () => {
       {generalStatsIsLoading && <Skeleton variant="rect" />}
       <div className="flex justify-center">
         {generalStats &&
-          Object.entries({ 總確診, 昨日確診, 死亡 }).map(([name, value]) => (
+          Object.entries({ 確診, 昨日確診, 死亡 }).map(([name, value]) => (
             <StatsCard
               key={name}
               name={name}
-              value={numberWithCommas(value.replace(",", ""))}
+              value={numberWithCommas(value)}
               size="large"
             />
           ))}
@@ -40,7 +36,7 @@ const GeneralStats = () => {
       <div className="flex justify-center">
         {generalStats &&
           Object.entries(restGeneratStats).map(([name, value]) => (
-            <StatsCard key={name} name={name} value={value} />
+            <StatsCard key={name} name={name} value={numberWithCommas(value)} />
           ))}
       </div>
     </div>

@@ -17,7 +17,7 @@ const StatsCard = ({ name, value, size = "base" }) => {
     base: {
       cardClass: "min-w-60 min-h-40 mx-2 my-5",
       title: "text-base ml-5",
-      content: "h2",
+      content: "h3",
     },
     large: {
       cardClass: "min-w-96 min-h-60 mx-5 my-5",

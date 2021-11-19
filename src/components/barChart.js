@@ -42,11 +42,9 @@ const BarChart = ({ data, className = "" }) => {
         reversed: true,
         indexLabelFontColor: "#5A5757",
         indexLabelPlacement: "outside",
-        dataPoints: data.map(([key, value]) => ({
-          x: new Date(
-            key.slice(0, 4) + "/" + key.slice(4, 6) + "/" + key.slice(6)
-          ),
-          y: value.count,
+        dataPoints: data.map(([date, count]) => ({
+          x: new Date(date),
+          y: count.count,
         })),
       },
     ],

@@ -49,7 +49,7 @@ const ChartTabs = ({ data, isLoading }) => {
         )}
       </TabPanel>
       <TabPanel value={value} index={1}>
-        {isLoading && <div>Gradivh Loading</div>}
+        {isLoading && <div>Graph Loading</div>}
         {!isLoading && (
           <ChartCard title="最近7日確診數">
             <BarChart data={data} />

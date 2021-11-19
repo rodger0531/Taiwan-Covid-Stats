@@ -12,7 +12,6 @@ const GeneralStats = () => {
     useSelector(getGeneralStatsState);
 
   const { 確診, 昨日確診, 死亡, ...restGeneratStats } = generalStats || {};
-  console.log(generalStats);
 
   useEffect(() => {
     dispatch(requestGeneralStats());

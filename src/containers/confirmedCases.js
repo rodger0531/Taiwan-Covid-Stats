@@ -8,10 +8,6 @@ const ConfirmedCases = () => {
   const dispatch = useDispatch();
   const { isLoading: confirmedStatsIsLoading = true, confirmedCases } =
     useSelector(getConfirmedCasesListState);
-  console.log(
-    "🚀 ~ file: confirmedCases.js ~ line 10 ~ ConfirmedCases ~ confirmedCases",
-    confirmedCases
-  );
 
   useEffect(() => {
     dispatch(requestConfirmedCasesList());
